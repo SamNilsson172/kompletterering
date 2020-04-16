@@ -6,40 +6,40 @@ namespace komplttereing
 {
     class Monster : Entity
     {
-        public int hp { get; protected set; }
-        int maxHp;
-        public int dmg { get; private set; }
+        public int Hp { get; protected set; }
+        readonly int maxHp;
+        public int Dmg { get; private set; }
 
         public void Attack(Monster defender)
         {
-            defender.hp -= dmg;
+            defender.Hp -= Dmg;
         }
 
         public virtual void Stats()
         {
-            Console.WriteLine(name + ": " + hp + "/" + maxHp + " hp");
+            Console.WriteLine(Name + ": " + Hp + "/" + maxHp + " hp");
         }
 
         public virtual void Cry()
         {
-            Console.WriteLine(name + " died!");
+            Console.WriteLine(Name + " died!");
         }
 
         public void Heal()
         {
-            hp = maxHp;
+            Hp = maxHp;
         }
 
         public bool Alive()
         {
-            return hp > 0;
+            return Hp > 0;
         }
 
         public Monster(string _name, int _hp, int _dmg) : base(_name)
         {
             maxHp = _hp;
-            hp = maxHp;
-            dmg = _dmg;
+            Hp = maxHp;
+            Dmg = _dmg;
         }
     }
 }

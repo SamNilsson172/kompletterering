@@ -6,11 +6,11 @@ namespace komplttereing
 {
     class Entity
     {
-        public string name { get; private set; }
+        public string Name { get; private set; }
 
         public Entity(string _name)
         {
-            name = _name;
+            Name = _name;
         }
     }
 }

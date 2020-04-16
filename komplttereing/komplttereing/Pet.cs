@@ -26,9 +26,9 @@ namespace komplttereing
             Console.WriteLine();
         }
 
-        public Pet(Enemy e) : base(e.name, e.hp, e.dmg)
+        public Pet(Enemy e) : base(e.Name, e.Hp, e.Dmg)
         {
-            hp += 100;
+            Hp += 100;
         }
     }
 }

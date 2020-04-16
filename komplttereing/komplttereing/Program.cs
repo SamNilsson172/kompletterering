@@ -24,7 +24,7 @@ namespace komplttereing
             p.Catch(TheGoodStuff.Selection(startingMonstersName, "What monster would you like to start with?", 3, startingMonstersMeth));
 
             string[] options = { "Talk to people", "Fight monsters" };
-            while (p.pets.array[0].Alive())
+            while (p.Pets.array[0].Alive())
             {
                 switch (TheGoodStuff.Selection(options, "What would you like to do?", 1))
                 {
@@ -52,7 +52,7 @@ namespace komplttereing
 
             void Fight()
             {
-                Pet player = p.pets.array[0];
+                Pet player = p.Pets.array[0];
                 Enemy opponent = null;
                 switch (TheGoodStuff.generator.Next(0, 2))
                 {
@@ -82,18 +82,18 @@ namespace komplttereing
                             player.Attack(opponent);
                             opponent.Attack(player);
 
-                            if (player.hp <= 0)
+                            if (player.Hp <= 0)
                             {
-                                p.pets.Remove(p.pets.array[0]);
-                                if (p.pets.array.Length == 0)
+                                p.Pets.Remove(p.Pets.array[0]);
+                                if (p.Pets.array.Length == 0)
                                 {
                                     Console.WriteLine("You died!");
                                     TheGoodStuff.ClickToContinue();
                                     Environment.Exit(0);
                                 }
-                                player = p.pets.array[0];
+                                player = p.Pets.array[0];
                             }
-                            if (opponent.hp <= 0)
+                            if (opponent.Hp <= 0)
                             {
                                 Console.WriteLine("You won!");
                                 player.IncreaseFriendship();

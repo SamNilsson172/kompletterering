@@ -6,12 +6,12 @@ namespace komplttereing
 {
     class Human : Entity
     {
-        public string hairColor { get; private set; }
-        public int age { get; private set; }
+        protected string hairColor;
+        protected int age;
 
         public virtual void Description()
         {
-            Console.WriteLine(name + " is " + age + " years old and has " + hairColor + " hair.");
+            Console.WriteLine(Name + " is " + age + " years old and has " + hairColor + " hair.");
         }
 
         public Human(string _name, string _haircolor, int _age) : base(_name)

@@ -6,7 +6,7 @@ namespace komplttereing
 {
     class Enemy : Monster
     {
-        string deathNoise;
+        readonly string deathNoise;
 
         public override void Cry()
         {

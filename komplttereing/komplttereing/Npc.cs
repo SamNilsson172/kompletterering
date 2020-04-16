@@ -6,7 +6,7 @@ namespace komplttereing
 {
     class Npc : Human
     {
-        string voiceline;
+        readonly string voiceline;
         public override void Description()
         {
             base.Description();
